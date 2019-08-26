@@ -1,4 +1,4 @@
-# your-chat-here
+# Your Chat Here
 A simple app where you can chat anonymously from anyone using Nodejs, express, mongoose and other packages.
 # Usage
 ```
