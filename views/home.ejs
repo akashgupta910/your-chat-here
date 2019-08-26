@@ -1,0 +1,86 @@
+<!-- --------- Hero --------- -->
+<section class="hero">
+    <div class="content">
+        <h1>Welcome to Our Site!</h1>
+        <h2>Here you can claim your room and chat anonymously.</h2>
+    </div>
+</section>
+
+<% if (info_success != '') { %>
+<div class="container w-50">
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <%= info_success %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+</div>
+<% } %>
+
+<% if (info_danger != '') { %>
+<div class="container w-50">
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <%= info_danger %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+</div>
+<% } %>
+
+<!-- --------- Main Card --------- -->
+<section class="main-card">
+    <div class="card">
+        <div class="row no-gutters">
+            <div class="col-md-6 form-sec">
+                <div class="card-body">
+                    <h5 class="card-title">Claim Your Room!</h5>
+                    <!-- Claim room form -->
+                    <form action="/claim" method="POST">
+                        
+                        <input type="text" placeholder="Enter ID" name="room_id" id="claim-id" class="form-control">
+                        <%if (claim_id_flash) {%>
+                        <p id="alert-claim-id" class="alert-msg"><%= claim_id_flash %></p>
+                        <%}%>
+                        <input type="password" placeholder="Enter Password" id="claim-pass" name="room_password"
+                            class="form-control">
+                        <p id="alert-claim-pass" class="alert-msg"></p>
+                        <button type="submit" id="bth-claim"class="btn btn-light">Claim</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="icons"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- --------- Enter room form --------- -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mb-auto" id="exampleModalLabel">Enter Room</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Enter Room Form -->
+                <form action="/room" method="POST">
+                    <input type="text" placeholder="Enter ID" id="room-id" name="room_id" class="form-control">
+                    <%if (room_id_flash) {%>
+                        <p id="alert-room-id" class="alert-msg"><%= room_id_flash %></p>
+                    <%}%>
+                    <input type="password" placeholder="Enter Password" id="room-pass" name="room_password" class="form-control">
+                    <%if (room_pass_flash) {%>
+                        <p id="alert-room-pass" class="alert-msg"><%= room_pass_flash %></p>
+                    <%}%>
+                    <button type="submit" class="btn btn-light" id="btn-room">Enter Room</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

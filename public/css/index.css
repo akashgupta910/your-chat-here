@@ -1,0 +1,186 @@
+* 
+{
+    margin: 0;
+    padding: 0;
+}
+
+:root 
+{
+    --primaryColor: #1287A5;
+    --font1: 'Alegreya Sans', sans-serif;
+    --font2: 'Alegreya', serif;
+    --font3: 'Alegreya Sans SC', sans-serif;
+    --font4: 'Alegreya SC', serif;
+}
+
+body 
+{
+    background: linear-gradient(rgba(0,0,0, 0.2), rgba(0,0,0, 0.4)),url(../images/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+
+}
+
+/* -------------- Navbar ------------- */
+
+.navbar
+{
+    background: #fff;
+    box-shadow: 0 0 20px 7px rgba(0,0,0, 0.2);
+}
+
+.navbar-brand 
+{
+    font-family: var(--font3);
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.navbar-brand .fa 
+{
+    margin-right: 10px;
+    color: var(--primaryColor);
+    font-size: 30px;
+}
+
+.nav-link 
+{
+    color: #333 !important;
+    font-size: 18px;
+    margin: 0 13px;
+    font-family: var(--font3) !important;
+    word-spacing: 3px;
+}
+
+.btn-enter
+{
+    background: transparent;
+    border: none;
+    border-bottom: 1.5px solid var(--primaryColor);
+    outline: none !important;
+}
+
+.nav-link:hover, .nav-active 
+{
+    color: var(--primaryColor) !important;
+}
+
+/* ------------- Hero ------------ */
+
+.hero .content
+{
+    font-family: var(--font3);
+    color: #fff;
+    text-align: center;
+    margin-top: 100px;
+    letter-spacing: 2px;
+}
+
+.hero .content h1 
+{
+    font-size: 50px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #000, 3px 3px 10px #333; 
+}
+
+.hero .content h2
+{
+    font-size: 33px;
+    text-shadow: 1px 1px 1px #000, 3px 3px 10px #333; 
+    font-family: var(--font3);
+    margin-top: 15px;
+}
+
+/* -------------- Main Card ------------------- */
+
+.main-card
+{
+    margin-top: 4%;
+    box-shadow: 0 0 20px 7px rgba(0,0,0, 0.2);
+}
+
+.main-card .card
+{
+    border-radius: 0;
+    border: none;
+}
+
+.main-card .card .form-sec 
+{
+    padding: 2% 9%;
+}
+
+.main-card .card .card-title, .modal .modal-title
+{
+    font-family: var(--font4);
+    font-size: 30px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.main-card .card input, .modal-body input
+{
+    border-radius: 0 !important;
+    border: none;
+    border-bottom: 1.5px solid rgba(0,0,0, 0.2);
+    margin-bottom: 24px;
+    box-shadow: none !important;
+    font-family: var(--font2);
+    letter-spacing: 1px;
+    word-spacing: 4px;
+    font-size: 19px;
+}
+
+.main-card .card input:focus
+{
+    border-bottom: 1.5px solid var(--primaryColor);
+    transition: 0.2s;
+}
+
+.main-card .card button, .modal-body button
+{
+    background: var(--primaryColor) !important;
+    border-radius: 0;
+    font-family: var(--font2);
+    letter-spacing: 1px;
+    font-size: 18px;
+    color: #fff !important;
+}
+
+.main-card .icons
+{
+    background: url(../images/img.jpg);
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;   
+    background-position: center;    
+    background-size: cover;
+}
+
+/* ------------ Extras -------------- */
+
+.modal 
+{
+    margin-top: 200px;
+}
+
+.alert-msg
+{
+    font-family: var(--font3);
+    color: red;
+    margin-top: -15px;
+    margin-left: 12px;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+
+.alert
+{
+    font-family: var(--font3) !important;
+    font-size: 17px;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    margin-top: 30px;
+}

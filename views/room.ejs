@@ -1,0 +1,76 @@
+<section id="chat">
+    <div class="container">
+        <div class="heading mt-3">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Room Memebers
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <ul class="list-group">
+                                <% for (let i = 0; i < ips.length ; i++) { %> 
+                                    <li class="list-group-item"><%= ips[i] %></li>
+                                <% } %>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 text-right">
+                    <h4>Room ID: <span><%= document.room_id %></span></h4>
+                </div>
+            </div>
+        </div>
+        <div class="card" id="scroll">
+            <div class="card-body">
+
+                <% for (let i = 0; i < document.message.length ; i++) {
+                    
+                    if (document.message[i].ip == ip) { %>
+                <div class="msg-me">
+                    <p><%= document.message[i].msg %></p>
+                    <ul>
+                        <li class="w-50">IP: <%= document.message[i].ip %></li>
+                        <li class="w-50"><%= document.message[i].date %></li>
+                    </ul>
+                </div>
+                <% } else { %>
+                <div class="msg-her">
+                    <p><%= document.message[i].msg %></p>
+                    <ul>
+                        <li class="w-50 text-muted">IP: <%= document.message[i].ip %></li>
+                        <li class="w-50 text-muted"><%= document.message[i].date %></li>
+                    </ul>
+                </div>
+
+                <% } 
+                } %>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="msg-form">
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <form action="/room/<%= document._id %>" method="POST">
+                    <textarea name="message" rows="1" class="form-control float-left" placeholder="Message"></textarea>
+                    <button type="submit" class="btn btn-light"><i class="fa fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    window.addEventListener('load', () => {
+        let elem = document.getElementById('scroll');
+        elem.scrollTo({
+            top: elem.scrollHeight,
+            // behavior: 'smooth'
+        });
+    });
+</script>
